@@ -21,3 +21,23 @@ function getPlayerChoice() {
   return playerChoice;
 }
 
+/* plays single round and returns winner */
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection === 'rock' && computerSelection === 'scissors' ||
+      playerSelection === 'paper' && computerSelection === 'rock' ||
+      playerSelection === 'scissors' && computerSelection === 'paper') 
+        {
+          playerScore++;
+          alert(`You win! Current score is you: ${playerScore}, computer ${computerScore}.`);
+        } 
+  else if (playerSelection === computerSelection) {
+    alert(`It's a tie. Current score is you: ${playerScore}, computer ${computerScore}.`);
+        }
+  else 
+        {
+          computerScore++;
+          alert(`computer wins! Current score is you: ${playerScore}, computer ${computerScore}.`)  
+        }
+  roundCount++;
+} 
+  
