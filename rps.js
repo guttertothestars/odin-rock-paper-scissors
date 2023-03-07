@@ -8,7 +8,7 @@ const choices = ['rock', 'paper', 'scissors'];
 
 /* randomly returns one of the three play options */
 function getComputerChoice() {
-  let coputerChoice = CHOICES[Math.floor(Math.random() * CHOICES.length)];
+  let computerChoice = choices[Math.floor(Math.random() * choices.length)];
   return computerChoice;
 } 
 
@@ -41,3 +41,15 @@ function playRound(playerSelection, computerSelection) {
   roundCount++;
 } 
   
+/* function to play whole game. Uses loop to get to five rounds */
+function game() {
+  for (let i = 0; i < 5; i++) {
+   playRound(getPlayerChoice(), getComputerChoice())
+ }
+
+ playerScore > computerScore ? alert(`You win, ${playerScore} to ${computerScore}.`) 
+ : computerScore > playerScore ? alert(`You lose, ${computerScore} to ${playerScore}.`)
+ : alert(`Tie game.`);
+} 
+
+game();
